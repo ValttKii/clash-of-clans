@@ -1,8 +1,11 @@
 const { getAllClan , getCurrentWar} = require("../services/clanInfoService");
+const {clans} = require('../config.js');
+
 
 const getAllClanHandler = async (req, res) => {
   try {
-    const data = await getAllClan();
+    const clanTag = clans.default; 
+    const data = await getAllClan(clanTag);
 
     const generalInfo = {
       name: data.name,

@@ -1,10 +1,11 @@
 const {
   getBuilderMembers,
 } = require("../services/clanBuilderMembersService.js");
+const {clans} = require('../config.js');
 
 const getSortedMembersHandler = async (req, res) => {
   try {
-    const clanTag = "#2YJQYGQJ";
+    const clanTag = clans.default;
     const builderMembers = await getBuilderMembers(clanTag);
     const sortedBuilder = builderMembers
       .sort((a, b) => b.builderBaseTrophies - a.builderBaseTrophies) // Suurimmasta pienimpään

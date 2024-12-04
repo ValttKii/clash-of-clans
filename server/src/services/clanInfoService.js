@@ -1,16 +1,13 @@
 const axios = require("axios");
-
-const BASE_URL = process.env.BASE_URL;
-const API_TOKEN = process.env.API_TOKEN;
-const clanTag = "#2YJQYGQJ";
+const {baseUrl , apiToken} = require('../config.js');
 
 //Avustava kutsu kaiken datan näkemiseen
-const getAllClan = async () => {
+const getAllClan = async (clanTag) => {
   try {
     const response = await axios.get(
-      `${BASE_URL}clans/${encodeURIComponent(clanTag)}`,
+      `${baseUrl}clans/${encodeURIComponent(clanTag)}`,
       {
-        headers: { Authorization: `Bearer ${API_TOKEN}` },
+        headers: { Authorization: `Bearer ${apiToken}` },
       }
     );
     return response.data; // Palautetaan pelaajan tiedot

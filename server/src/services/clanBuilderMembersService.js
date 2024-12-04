@@ -1,16 +1,14 @@
 const axios = require("axios");
-
+const {baseUrl , apiToken} = require('../config.js');
 //const BASE_URL = "https://api.clashofclans.com/v1/";
-const BASE_URL = process.env.BASE_URL;
-const API_TOKEN = process.env.API_TOKEN;
 
 
 const getBuilderMembers = async (clanTag) => {
     try {
       const response = await axios.get(
-        `${BASE_URL}clans/${encodeURIComponent(clanTag)}`,
+        `${baseUrl}clans/${encodeURIComponent(clanTag)}`,
         {
-          headers: { Authorization: `Bearer ${API_TOKEN}` },
+          headers: { Authorization: `Bearer ${apiToken}` },
         }
       );
       // Otetaan jäsenlista ja lajitellaan builderBaseTrophies-arvon mukaan

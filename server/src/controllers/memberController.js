@@ -1,8 +1,10 @@
 const { getClanInfo } = require("../services/clanMembersService.js");
+const {clans} = require('../config.js');
+
 
 const getClanInfoHandler = async (req, res) => {
     try {
-      const clanTag = "#2YJQYGQJ"; 
+      const clanTag = clans.default; 
       const members = await getClanInfo(clanTag);
   
       // Filtteröinti ja muokkaus
