@@ -3,7 +3,7 @@ const {
 } = require("../services/clanBuilderMembersService.js");
 const {clans} = require('../config.js');
 
-const getSortedMembersHandler = async (req, res) => {
+const getBuilderMembersHanler = async (req, res) => {
   try {
     const clanTag = clans.default;
     const builderMembers = await getBuilderMembers(clanTag);
@@ -20,4 +20,4 @@ const getSortedMembersHandler = async (req, res) => {
   }
 };
 
-module.exports = { getSortedMembersHandler };
+module.exports = { getBuilderMembersHanler };

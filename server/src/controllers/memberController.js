@@ -2,7 +2,7 @@ const { getClanInfo } = require("../services/clanMembersService.js");
 const {clans} = require('../config.js');
 
 
-const getClanInfoHandler = async (req, res) => {
+const getClanMembersHandler = async (req, res) => {
     try {
       const clanTag = clans.default; 
       const members = await getClanInfo(clanTag);
@@ -23,4 +23,4 @@ const getClanInfoHandler = async (req, res) => {
     }
   };
 
-  module.exports = {getClanInfoHandler};
+  module.exports = {getClanMembersHandler};
