@@ -12,6 +12,7 @@ const getBuilderMembersHanler = async (req, res) => {
       .map((member) => ({
         name: member.name,
         builderBaseTrophies: member.builderBaseTrophies,
+        builderBaseLeague: member.builderBaseLeague.name
       }));
     res.json(sortedBuilder);
   } catch {

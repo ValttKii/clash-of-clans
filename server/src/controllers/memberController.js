@@ -13,6 +13,7 @@ const getClanMembersHandler = async (req, res) => {
           name: member.name,
           expLevel: member.expLevel,
           role: member.role,
+          tag: member.tag
         }))
         .sort((a, b) => b.expLevel - a.expLevel);
   
